@@ -1,7 +1,11 @@
-module.exports = function (width) {
+module.exports = function (wid) {
     return {
+        width:wid,
         area: function() {
-            return width * width;
+            return this.width * this.width;
+        },
+        circum  : function(){
+            return 4 * this.width;
         }
     };
 }

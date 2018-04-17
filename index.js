@@ -10,5 +10,11 @@ console.log('Circumference of ac circle =' + circle.circum(3));
 console.log('Pi =' + circle.pi);
 
 const square = require('./square');
-let mysquare = square(4);
+let mysquare = square(5);
+mysquare.width = 10;
 console.log('Area of a square = '+ mysquare.area());
+console.log('Circumference of ac square = '+ mysquare.circum());
+
+const os = require('os');
+console.log(os.type());
+console.log(os.cpus());

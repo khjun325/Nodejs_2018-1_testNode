@@ -1,6 +1,6 @@
 const http = require('http');
 
-function start(port,hostname){
+module.exports = function (port,hostname){
     function onRequest(req,res){
         res.writeHead(200,{'Content-type':'text/html'});
         res.write('Hello, world!');
@@ -9,4 +9,3 @@ function start(port,hostname){
     http.createServer(onRequest).listen(port,hostname);
     console.log('Server is running at '+ hostname + ':' + port);
 }
-exports.start=start;

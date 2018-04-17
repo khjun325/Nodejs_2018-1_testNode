@@ -1,10 +1,5 @@
-const http = require('http');
-function onRequest(req,res){
-    res.writeHead(200,{'Content-type':'text/html'});
-    res.write('Hello, world!');
-    res.end();
-}
+let nport=8000;
+let sHost='localhost'
+const myServer = require('./myServer');
 
-let server = http.createServer(onRequest);
-server.listen(8000, 'localhost');
-console.log('Server is running at localhost:8000');
+myServer.start(nport, sHost);

@@ -1,4 +1,4 @@
-let nport=8000;
+let nport=3000;
 let sHost='localhost'
 const myServer = require('./myServer');
 const myRouter = require('./myrouter');

@@ -1,8 +1,12 @@
-function route(pathname, handle) {
+function route(pathname, handle, res) {
     console.log('Routing for' + pathname);
-    if (typeof handle[pathname] === 'function')
-    return handle[pathname]();
-    else return '404 not found!';
+    if (typeof handle[pathname] === 'function')  // handle 모듈안에 조건
+    handle[pathname](res);
+    else {
+        res.writeHead(404, {'Content-Type' : 'text/html'});
+        res.write('404 Not found!');
+        res.end();
+    }
 }
 
-exports.route = route;
+exports.route = route; //export : 외부로 보내는것
